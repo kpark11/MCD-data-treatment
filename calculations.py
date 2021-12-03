@@ -40,7 +40,7 @@ for filename in list1:
         data_Hysteresis['Y_'+filename] = data[2]
         data_Hysteresis['XX_'+filename] = data[3]
         data_Hysteresis['YYY_'+filename] = data[4]
-        data_Hysteresis['Hysteresis_'+filename] = data[5]
+        data_Hysteresis[filename] = data[5]
         plt.plot(data[0],data[5])
         plt.xlabel('Magnetic Field (T)')
         plt.ylabel('Raw Hysteresis signal')
@@ -53,7 +53,7 @@ for filename in list1:
         data_MCD['Y_'+filename] = data[2]
         data_MCD['XX_'+filename] = data[3]
         data_MCD['YYY_'+filename] = data[4]
-        data_MCD['MCD_'+filename] = data[5]
+        data_MCD[filename] = data[5]
         plt.plot(data[0],data[5])
         plt.xlabel('Wavelength (nm)')
         plt.ylabel('Raw MCD signal')
