@@ -31,8 +31,6 @@ for filename in list1:
     print(filename)
     if fnmatch.fnmatch(filename,'*.*'):
         pass
-    #elif fnmatch.fnmatch(filename,'*python_data*'):
-        #pass
     elif fnmatch.fnmatch(filename,'*python*'):
         pass
     elif fnmatch.fnmatch(filename,'*Hysteresis*'):
@@ -51,16 +49,16 @@ for filename in list1:
     elif fnmatch.fnmatch(filename,'*T*'):
         data = pd.read_csv(filename,delimiter='\t',header=None)
         data_MCD['Wavelength'] = data[0]
-        #data_MCD['X_'+filename] = data[1]
-        #data_MCD['Y_'+filename] = data[2]
-        #data_MCD['XX_'+filename] = data[3]
-        #data_MCD['YYY_'+filename] = data[4]
+        data_MCD['X_'+filename] = data[1]
+        data_MCD['Y_'+filename] = data[2]
+        data_MCD['XX_'+filename] = data[3]
+        data_MCD['YYY_'+filename] = data[4]
         data_MCD['MCD_'+filename] = data[5]
         plt.plot(data[0],data[5])
-        #plt.xlabel('Wavelength (nm)')
-        #plt.ylabel('Raw MCD signal')
-        #plt.title(filename)
-        #plt.show()
+        plt.xlabel('Wavelength (nm)')
+        plt.ylabel('Raw MCD signal')
+        plt.title(filename)
+        plt.show()
     else:
         pass
     
