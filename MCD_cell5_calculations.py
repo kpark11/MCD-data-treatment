@@ -123,6 +123,8 @@ plt.plot(data_MCD['Wavelength'],treated_MCD_n0T)
 
 
 plt.xlabel('Wavelength (nm)')
+plt.xlim(540,900)
+plt.ylim(-0.08,0.08)
 plt.ylabel('MCD signal')
 plt.title(filename)
 plt.axvline(x=556)
@@ -130,6 +132,7 @@ plt.axvline(x=604)
 plt.axvline(x=663)
 plt.axvline(x=761)
 plt.axvline(x=845)
+plt.axhline(y=0)
 plt.savefig("treated_MCD_together.pdf")
 plt.show()
 
@@ -164,5 +167,5 @@ data_MCD['treated_MCD_n0T']= treated_MCD_n0T
 ##############################
 
 data_MCD.to_csv("python_data_MCD")
-#data_Hysteresis.to_csv("python_data_Hysteresis")
+data_Hysteresis.to_csv("python_data_Hysteresis")
 
